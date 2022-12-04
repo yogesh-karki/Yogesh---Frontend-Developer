@@ -1,0 +1,297 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Roboto", sans-serif;
+}
+
+.container {
+  max-width: 1240px;
+  margin: 0 auto;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+  padding: 0;
+}
+
+p {
+  font-size: 16px;
+
+  line-height: 1.6;
+}
+
+a {
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: none;
+
+  &:focus {
+    outline: none;
+  }
+}
+
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 20px 0;
+
+  .logo {
+    color: #fff;
+    font-size: 22px;
+    font-weight: 600;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+  }
+}
+
+.banner {
+  width: 100%;
+  height: 100vh;
+  background-position: center !important;
+  background-size: cover !important;
+}
+
+.data_container {
+  padding: 100px 0 50px;
+
+  .wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .data_card {
+    width: 22%;
+    align-self: center;
+    margin: 25px 15px;
+
+    @media (max-width: 768px) {
+      width: 100%;
+    }
+
+    img {
+      width: 100%;
+    }
+
+    .img {
+      position: relative;
+
+      time {
+        position: absolute;
+        bottom: 10px;
+        left: 7px;
+        font-weight: 300;
+        color: #106dbb;
+      }
+    }
+
+    .head {
+      display: flex;
+      justify-content: space-between;
+      padding: 15px 0;
+
+      h4 {
+        font-size: 24px;
+        text-transform: uppercase;
+        font-weight: 600;
+        small {
+          font-weight: 300;
+          font-size: 14px;
+          letter-spacing: 0.5px;
+        }
+      }
+
+      .status {
+        text-transform: uppercase;
+        font-size: 12px;
+        font-weight: 400;
+        border: 1px solid;
+        line-height: 1;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 4px 8px;
+        border-radius: 15px;
+
+        &.active {
+          color: green;
+        }
+
+        &.destroyed {
+          color: red;
+        }
+
+        &.retired {
+          color: blue;
+        }
+
+        &.unknown {
+          color: orange;
+        }
+      }
+    }
+
+    .details {
+      height: 48px;
+      font-weight: 300;
+      width: 90%;
+      line-height: 1.4;
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+    }
+  }
+}
+
+.show_more {
+  text-align: center;
+  margin-bottom: 40px;
+
+  .btn {
+    display: inline-flex;
+    width: 180px;
+    height: 48px;
+    align-items: center;
+    justify-content: center;
+    background: rgb(25, 151, 209);
+    color: #fff;
+    text-transform: uppercase;
+    border-radius: 30px;
+    font-size: 16px;
+    cursor: pointer;
+  }
+}
+
+.search {
+  padding-top: 40px;
+
+  form {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    @media (max-width: 768px) {
+      display: flex;
+      flex-wrap: wrap;
+      text-align: center;
+    }
+  }
+
+  .btn {
+    &.clear {
+      input {
+        color: #333;
+        background: transparent;
+        margin-left: 10px;
+        border: 1px solid #333;
+      }
+    }
+
+    input {
+      width: 100px;
+      height: 48px;
+      background: #1997d1;
+      color: #fff;
+      border: 0;
+    }
+  }
+
+  .select_div {
+    margin: 10px 8px;
+
+    select {
+      width: 240px;
+      height: 48px;
+    }
+
+    @media (max-width: 768px) {
+      width: 100%;
+    }
+  }
+}
+
+.popUp {
+  position: fixed;
+  width: 100%;
+  height: 100vh;
+  top: 0;
+  background: rgba(0, 0, 0, 0.8);
+  left: 0;
+  z-index: 3;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  .close_btn {
+    position: fixed;
+    top: 20px;
+    right: 50px;
+    z-index: 99;
+    color: #fff;
+    border: 1px solid #fff;
+    display: flex;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    align-items: center;
+    justify-content: center;
+    font-weight: 200;
+  }
+
+  .wrapper {
+    max-width: 780px;
+    background: #fff;
+
+    display: flex;
+    justify-content: space-between;
+
+    .img {
+      width: 45%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 20px 0;
+
+      img {
+        width: 80%;
+      }
+    }
+
+    .desc {
+      width: 50%;
+      padding: 50px 20px 0 0;
+
+      h3 {
+        font-size: 24px;
+        text-transform: uppercase;
+        margin-bottom: 10px;
+        small {
+          font-size: 18px;
+        }
+      }
+
+      p {
+        margin: 15px 0;
+      }
+    }
+  }
+}

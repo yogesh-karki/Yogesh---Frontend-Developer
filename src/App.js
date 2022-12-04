@@ -1,25 +1,26 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
 
-function App() {
+import { Provider } from "react-redux";
+import DataContainer from "./components/DataContainer";
+import dataStore from "./store/store";
+
+const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+    <Provider store={dataStore()}>
+      <header>
+        <div className="container">
+          <div className="logo">spaceX</div>
+        </div>
       </header>
-    </div>
+
+      <section
+        className="banner"
+        style={{ background: 'url("./images/banner.jpg")' }}
+      ></section>
+
+      <DataContainer />
+    </Provider>
   );
-}
+};
 
 export default App;
